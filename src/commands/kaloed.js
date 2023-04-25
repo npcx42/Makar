@@ -1,12 +1,12 @@
 import { interactionResponseType } from '../utils/';
 
 export default {
-	name: 'kaloed',
+	name: 'makarlox',
 	async handle() {
 		return {
 			type: interactionResponseType.ChannelMessageWithSource,
 			data: {
-				content: `команда на курорте отстань от неё`,
+				content: `согл`,
 			}
 		}
 	}
