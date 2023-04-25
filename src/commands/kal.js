@@ -16,7 +16,7 @@ import {
 // какой ужас
 
 export default {
-	name: 'kal',
+	name: 'makar',
 	async handle(interaction, env, ctx) {
 		const data = await getKal(interaction.member.user.id, env);
 
@@ -42,7 +42,7 @@ export default {
 						return {
 							type: interactionResponseType.ChannelMessageWithSource,
 							data: {
-								content: `ты покушал кал уже получается скушал всего ${total}\nснова сможешь покушать ${formatRelativeTimestamp(coolDown)}`,
+								content: `ты съел макар бургер уже получается скушал всего ${total}\nснова сможешь покушать ${formatRelativeTimestamp(coolDown)}`,
 								components: [
 									{
 										type: componentType.ActionRow,
@@ -50,13 +50,13 @@ export default {
 											{
 												type: componentType.Button,
 												style: buttonStyle.secondary,
-												label: 'напомните мне',
+												label: 'напомните мне прошу',
 												custom_id: `kal:remind:${coolDown}:${interaction.member.user.id}`
 											},
 											{
 												type: componentType.Button,
 												style: buttonStyle.secondary,
-												label: data.prestigeLevel === 19 ? 'нет' : (5 + 7 * data.prestigeLevel) <= total ? 'вы можете совернить престиж' : `до престижа: ${(5 + 7 * data.prestigeLevel) - total} калоедств`,
+												label: data.prestigeLevel === 19 ? 'нет' : (5 + 7 * data.prestigeLevel) <= total ? 'вы можете совернить престиж чтобы получать больше съеденных макарбургеров' : `до престижа: ${(5 + 7 * data.prestigeLevel) - total} калоедств`,
 												custom_id: 'kal:remain',
 												disabled: true
 											}
@@ -72,7 +72,7 @@ export default {
 							return {
 								type: interactionResponseType.ChannelMessageWithSource,
 								data: {
-									content: 'все пока 19 престижей максимум',
+									content: 'все пока 19 престижей максимум хз почему',
 									flags: 64
 								}
 							}
@@ -84,7 +84,7 @@ export default {
 							return {
 								type: interactionResponseType.ChannelMessageWithSource,
 								data: {
-									content: `для совершения престижа нужно ${required} калоедств иди копи`,
+									content: `для совершения престижа нужно ${required} макар бургеров иди копи лошпед`,
 									flags: 64
 								}
 							}
@@ -96,7 +96,7 @@ export default {
 						return {
 							type: interactionResponseType.ChannelMessageWithSource,
 							data: {
-								content: `престиж совершен теперь ${data.prestigeLevel} престижей ВСЕГО\nкал сможешь кстати покушать ${formatRelativeTimestamp(coolDown)}`,
+								content: `престиж совершен!!!!! теперь ${data.prestigeLevel} престижей ВСЕГО\n ты сможешь покушать макарбурген ${formatRelativeTimestamp(coolDown)}`,
 								components: [
 									{
 										type: componentType.ActionRow,
@@ -104,7 +104,7 @@ export default {
 											{
 												type: componentType.Button,
 												style: buttonStyle.secondary,
-												label: 'напомните мне',
+												label: 'напомните мне прошу умоляю',
 												custom_id: `kal:remind:${coolDown}:${interaction.member.user.id}`
 											}
 										]
@@ -118,21 +118,21 @@ export default {
 						return {
 							type: interactionResponseType.ChannelMessageWithSource,
 							data: {
-								content: 'функция поедания кала',
+								content: 'поедание макар бургеров',
 								embeds: [
 									{
 										title: `</kal eat:${interaction.data.id}>`,
-										description: 'вы можете покушать кал. для чего? вы можете получать роли. за что? за количество скушаного вами кала.',
+										description: 'вы можете покушать макар бургер. для чего? чтобы быть крутым на десолейте.',
 										color: embedColor
 									},
 									{
 										title: `</kal prestige:${interaction.data.id}>`,
-										description: 'вы можете сделать престиж и получать больше кала за раз классно да получается я тоже так думаю',
+										description: 'вы можете сделать престиж да ',
 										color: embedColor
 									},
 									{
-										title: 'kaloedstvo (в контекстном меню)',
-										description: 'покажет сколько человек скушал кала с момента последнего престижа',
+										title: '~~kaloedstvo~~ (в контекстном меню)',
+										description: '~~покажет сколько человек скушал кала с момента последнего престижа~~ \nданный бот является форком бота kaloed. ссылка на репозиторий https://github.com/oddyamill/Kaloed',
 										image: { url: 'https://cdn.discordapp.com/attachments/977572991854592021/1080862632820609084/image.png' },
 										color: embedColor
 									}
