@@ -1,7 +1,7 @@
 import { getKal, interactionResponseType } from '../utils/';
 
 export default {
-	name: 'kaloedstvo',
+	name: 'makarburger',
 	async handle(interaction, env) {
 		const user = interaction.data.resolved.users[interaction.data.target_id];
 
@@ -9,7 +9,7 @@ export default {
 			return {
 				type: interactionResponseType.ChannelMessageWithSource,
 				data: {
-					content: 'это бот боты не могут кал кушать потому что',
+					content: 'это бот а боты не могут макарбургер кушать потому что боты ахахахаха',
 					flags: 64
 				}
 			}
@@ -20,7 +20,7 @@ export default {
 		return {
 			type: interactionResponseType.ChannelMessageWithSource,
 			data: {
-				content: `ого вау ${user.username} скушал кала много аж ${kal}`
+				content: `ого вау ${user.username} скушал ${kal} макарбургеров`
 			}
 		}
 	}
