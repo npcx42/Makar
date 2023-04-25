@@ -5,7 +5,7 @@ export default {
 	handle(interaction) {
 		return { 
 			type: interactionResponseType.ChannelMessageWithSource,
-			data: { content: `${apiEndpoint}/oauth2/authorize?client_id=${interaction.application_id}&scope=applications.commands` } 
+			data: { content: `${apiEndpoint}/oauth2/authorize?client_id=${interaction.application_id}&scope=applications.commands бот привязан к десолейту лошпед` } 
 		}
 	}
 }
